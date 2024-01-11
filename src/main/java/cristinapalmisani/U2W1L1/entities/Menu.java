@@ -17,7 +17,7 @@ import java.util.stream.IntStream;
 @NoArgsConstructor
 public class Menu {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "pizze")
     @OneToMany(mappedBy = "menu")

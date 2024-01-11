@@ -20,7 +20,7 @@ import java.util.Random;
 @PropertySource("application.properties")
 public class Order {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private int orderNumber;
 
@@ -31,6 +31,7 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "table_id", nullable = false)
     private Table table;
+
     @Enumerated(EnumType.STRING)
     private OrderState orderState = OrderState.IN_PROGRESS;
     private int seats;

@@ -1,6 +1,7 @@
 package cristinapalmisani.U2W1L1;
 
 import cristinapalmisani.U2W1L1.entities.*;
+import dao.MenuItemService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -84,7 +85,7 @@ public class BeansConfiguration {
     public Pizzas onionPizza(){
         return new Pizzas("Onion Pizza", 1000, 5, Arrays.asList(tomato(), cheese(), onions()));
     }
-@Bean
+    @Bean
     public Menu menu(){
         List<Pizzas> pizzaList = new ArrayList<>();
         List<Drinks> drinkList = new ArrayList<>();
@@ -116,5 +117,6 @@ public class BeansConfiguration {
         Random rndm = new Random();
         return new Table(rndm.nextInt(12) + 1, rndm.nextInt(10) + 2);
     }
+
     }
 

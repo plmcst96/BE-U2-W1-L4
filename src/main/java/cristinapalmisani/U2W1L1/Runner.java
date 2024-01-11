@@ -1,6 +1,8 @@
 package cristinapalmisani.U2W1L1;
 
 import cristinapalmisani.U2W1L1.entities.*;
+import dao.MenuItemService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
@@ -9,6 +11,8 @@ import java.util.List;
 
 @Component
 public class Runner implements CommandLineRunner {
+     @Autowired
+     MenuItemService menuItemService;
     @Override
     public void run(String... args) throws Exception {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(U2W1L1Application.class);
@@ -28,6 +32,7 @@ public class Runner implements CommandLineRunner {
         Order order1 = new Order(1, menu, table, 3);
         Order order2 = new Order(1, menu1, table, 4);
 
+        menuItemService.savePizza(pizza1);
 
 
         fakeOrder(menu1);

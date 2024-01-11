@@ -25,7 +25,7 @@ public class Pizzas extends MenuItem {
 
     public Pizzas(String name, int calories, double price, List<Toppings> toppings) {
         super(name, calories, price);
-        //this.toppings = toppings;
+        this.toppings = toppings;
     }
 
   @Override
@@ -34,7 +34,7 @@ public class Pizzas extends MenuItem {
                 "name=" + getName() + '\'' +
                 ", calories=" + getCalories() +
                 ", price=" + getPrice() +
-                //", toppingList=" + getToppings() +
+                ", toppingList=" + getToppings() +
                 '}';
     }
 }
